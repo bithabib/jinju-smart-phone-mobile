@@ -289,8 +289,64 @@ main { flex: 1; }
   .contact-list li { grid-template-columns: 100px 1fr; }
 }
 
-/* ---------- Print (QR page) ---------- */
+/* ---------- Business card ---------- */
+.card-actions { display: flex; gap: 10px; justify-content: center; margin-bottom: 26px; flex-wrap: wrap; }
+.cards { display: flex; gap: 28px; flex-wrap: wrap; justify-content: center; }
+.card-wrap { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.card-label { font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.card-tip { text-align: center; max-width: 560px; margin: 26px auto 0; }
+
+/* Exact business-card size: 90 × 54 mm */
+.bcard {
+  width: 90mm; height: 54mm; border-radius: 3mm; overflow: hidden;
+  box-shadow: var(--shadow-lg); position: relative; color: var(--ink);
+  display: flex; box-sizing: border-box;
+}
+
+/* Front */
+.bcard-front {
+  flex-direction: column; justify-content: space-between;
+  background: linear-gradient(135deg, #2b8bf2 0%, var(--blue) 55%, var(--blue-d) 100%);
+  color: #fff; padding: 5mm 5.5mm;
+}
+.bcard-top { display: flex; align-items: center; gap: 2.5mm; }
+.bcard-mark {
+  width: 9mm; height: 9mm; flex: none; border-radius: 2mm; background: rgba(255,255,255,.2);
+  display: grid; place-items: center; font-weight: 800; font-size: 4mm;
+}
+.bcard-name { font-size: 4mm; font-weight: 800; line-height: 1.1; }
+.bcard-name-ko { font-size: 3mm; font-weight: 600; opacity: .9; }
+.bcard-tagline { font-size: 2.7mm; opacity: .92; margin-top: 1mm; }
+.bcard-brands {
+  display: inline-block; align-self: flex-start; background: rgba(255,255,255,.18);
+  padding: 0.8mm 2.4mm; border-radius: 4mm; font-size: 2.4mm; font-weight: 700; letter-spacing: .03em;
+}
+.bcard-owner { font-size: 3.2mm; font-weight: 800; margin-bottom: 1mm; }
+.bcard-lines { display: grid; gap: 0.5mm; }
+.bcard-lines span { display: flex; align-items: center; gap: 1.4mm; font-size: 2.5mm; opacity: .96; }
+.bcard-lines svg { opacity: .85; flex: none; }
+
+/* Back */
+.bcard-back { background: #fff; align-items: center; gap: 4mm; padding: 5mm; }
+.bcard-qrbox { flex: none; padding: 2mm; border: 1px solid var(--line); border-radius: 2.5mm; background: #fff; }
+.bcard-qrbox canvas { display: block; width: 34mm !important; height: 34mm !important; }
+.bcard-back-text { display: flex; flex-direction: column; gap: 2.5mm; }
+.bcard-scan { font-size: 3.4mm; font-weight: 800; color: var(--blue); line-height: 1.25; }
+.bcard-social { display: flex; flex-wrap: wrap; gap: 2mm; }
+.bcard-social span {
+  width: 7mm; height: 7mm; border-radius: 2mm; display: grid; place-items: center;
+  background: color-mix(in srgb, var(--c) 14%, #fff); color: var(--c);
+}
+.bcard-back-name { font-size: 2.5mm; color: var(--muted); font-weight: 600; margin-top: auto; }
+
+/* ---------- Print (QR page + business card) ---------- */
 @media print {
-  .nav, .footer, .qr-meta, .section-head p { display: none; }
+  .nav, .footer, .no-print, .qr-meta, .section-head p { display: none !important; }
+  body { background: #fff; }
+  .section { padding: 0 !important; margin: 0 !important; }
   .qr-page .qr-box { box-shadow: none; border: none; }
+  @page { margin: 12mm; }
+  .cards { display: block !important; }
+  .card-wrap { margin: 0 0 12mm !important; }
+  .bcard { box-shadow: none !important; page-break-after: always; }
 }

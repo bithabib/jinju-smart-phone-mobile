@@ -8,6 +8,17 @@ const STRINGS = {
   nav_links: { en: "Links", ko: "링크" },
   nav_sell: { en: "Sell Sheet", ko: "판매장부" },
   nav_admin: { en: "Admin", ko: "관리자" },
+  nav_card: { en: "Card", ko: "명함" },
+
+  // Business card
+  card_title: { en: "Business Card", ko: "명함" },
+  card_subtitle: { en: "Print this card. The QR opens all your social links.", ko: "이 명함을 인쇄하세요. QR을 스캔하면 모든 소셜 링크가 열립니다." },
+  card_scan: { en: "Scan for all our links", ko: "스캔하면 모든 링크로 연결" },
+  card_front: { en: "Front", ko: "앞면" },
+  card_back: { en: "Back", ko: "뒷면" },
+  card_print: { en: "Print / Save as PDF", ko: "인쇄 / PDF 저장" },
+  card_download_qr: { en: "Download QR", ko: "QR 다운로드" },
+  card_hint: { en: "Tip: in the print dialog choose paper size and set margins to 'None' for an exact 90 × 54 mm card. Each side prints on its own page.", ko: "팁: 인쇄 창에서 여백을 '없음'으로 설정하면 정확한 90 × 54 mm 명함이 됩니다. 앞면과 뒷면은 각각 다른 페이지에 인쇄됩니다." },
 
   // Hero
   hero_tagline: { en: "Used & New Smartphones · Samsung · LG U+", ko: "중고 · 신규 스마트폰 · 삼성 · LG U+" },
