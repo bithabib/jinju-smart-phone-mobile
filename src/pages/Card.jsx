@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { useLang } from "../i18n";
-import { BUSINESS, LINKS } from "../config";
+import { BUSINESS, LINKS, LINKS_URL } from "../config";
 import { Icon } from "../components/Icons";
 
 export default function Card() {
@@ -13,9 +13,8 @@ export default function Card() {
   const tagline = lang === "ko" ? BUSINESS.taglineKo : BUSINESS.taglineEn;
   const address = lang === "ko" ? BUSINESS.addressKo : BUSINESS.addressEn;
 
-  // QR points to the live Links hub (works on whatever domain the site is hosted).
-  const linksUrl =
-    window.location.origin + import.meta.env.BASE_URL + "#/links";
+  // QR always points to the live Links hub (even when generated on localhost).
+  const linksUrl = LINKS_URL;
 
   // Social icons shown on the back (skip the plain "call" entry — phone is on the front).
   const social = LINKS.filter((l) => l.icon !== "phone");

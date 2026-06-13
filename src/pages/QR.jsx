@@ -1,16 +1,15 @@
 import { useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { useLang } from "../i18n";
-import { BUSINESS } from "../config";
+import { BUSINESS, LINKS_URL } from "../config";
 
 export default function QR() {
   const { t, lang } = useLang();
   const wrapRef = useRef(null);
   const name = lang === "ko" ? BUSINESS.nameKo : BUSINESS.nameEn;
 
-  // The QR points to the Links hub page on whatever domain the site is hosted.
-  const defaultUrl = window.location.origin + window.location.pathname + "#/links";
-  const [url, setUrl] = useState(defaultUrl);
+  // The QR points to the live Links hub (hardcoded so it never encodes localhost).
+  const [url, setUrl] = useState(LINKS_URL);
 
   const download = () => {
     const canvas = wrapRef.current?.querySelector("canvas");

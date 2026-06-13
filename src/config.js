@@ -3,6 +3,14 @@
 //  Edit the values here to update business info & links sitewide.
 // =============================================================
 
+// Public URL where the site is deployed. The QR codes always point here, so
+// they work even when you generate them while running on localhost.
+// 🔧 Change this if you move the site to a custom domain.
+export const SITE_URL = "https://bithabib.github.io/jinju-smart-phone-mobile/";
+
+// The "link hub" page that the QR code opens.
+export const LINKS_URL = SITE_URL + "#/links";
+
 // Resolve an image path against the deploy base (handles GitHub Pages sub-path).
 // - http(s):// or data: URLs are returned unchanged
 // - "/img/x" or "img/x" become "<base>img/x" so they work under a sub-path
