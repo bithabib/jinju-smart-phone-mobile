@@ -13,9 +13,7 @@ export default function Home() {
 
   const name = lang === "ko" ? BUSINESS.nameKo : BUSINESS.nameEn;
   const tagline = lang === "ko" ? BUSINESS.taglineKo : BUSINESS.taglineEn;
-  const mapUrl =
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent(BUSINESS.mapQuery);
+  const mapUrl = BUSINESS.naverMap;
   const social = LINKS.filter((l) => l.icon !== "phone");
 
   return (
@@ -23,7 +21,7 @@ export default function Home() {
       {/* HERO */}
       <section className="hero">
         <div className="hero-content">
-          <span className="hero-badge">Samsung · LG U+</span>
+          <span className="hero-badge">Samsung · Apple · LG U+</span>
           <h1>{name}</h1>
           <p className="hero-tag">{tagline}</p>
           <p className="hero-sub">{t("hero_tagline")}</p>
@@ -119,7 +117,7 @@ export default function Home() {
         </div>
         <div className="contact-grid">
           <ul className="contact-list">
-            <li><b>{t("contact_address")}</b><span>{lang === "ko" ? BUSINESS.addressKo : BUSINESS.addressEn}</span></li>
+            <li><b>{t("contact_address")}</b><span><a href={mapUrl} target="_blank" rel="noreferrer">{lang === "ko" ? BUSINESS.addressKo : BUSINESS.addressEn}</a></span></li>
             <li><b>{t("contact_phone")}</b><span><a href={`tel:+8210${BUSINESS.phone.slice(3).replace(/-/g, "")}`}>{BUSINESS.phone}</a></span></li>
             <li><b>{t("contact_tel")}</b><span><a href={`tel:${BUSINESS.tel}`}>{BUSINESS.tel}</a></span></li>
             <li><b>{t("contact_fax")}</b><span>{BUSINESS.fax}</span></li>
@@ -127,16 +125,16 @@ export default function Home() {
             <li><b>{t("contact_kakao")}</b><span>{BUSINESS.kakao}</span></li>
             <li><b>{t("contact_bank")}</b><span>{BUSINESS.bank} · {BUSINESS.bankHolder}</span></li>
           </ul>
-          <div className="contact-map">
-            <iframe
-              title="map"
-              loading="lazy"
-              src={`https://maps.google.com/maps?q=${encodeURIComponent(BUSINESS.mapQuery)}&output=embed`}
-            />
-            <a href={mapUrl} target="_blank" rel="noreferrer" className="btn btn-ghost btn-block">
-              <Icon name="pin" size={18} /> {t("open_map")}
-            </a>
-          </div>
+          <a className="contact-map" href={mapUrl} target="_blank" rel="noreferrer">
+            <div className="map-pin"><Icon name="pin" size={34} /></div>
+            <div className="map-info">
+              <b>{lang === "ko" ? BUSINESS.addressKo : BUSINESS.addressEn}</b>
+              <span>{t("view_directions")}</span>
+              <span className="btn btn-primary map-btn">
+                <Icon name="pin" size={18} /> {t("open_map")}
+              </span>
+            </div>
+          </a>
         </div>
       </section>
     </>

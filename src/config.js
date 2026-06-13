@@ -32,7 +32,8 @@ export const BUSINESS = {
   addressKo: "경상남도 진주시 상대동 동진로 205-2",
   bank: "NH 312-0178-5470-21",
   bankHolder: "나딤모함마드 (농협)",
-  mapQuery: "경상남도 진주시 상대동 동진로 205-2",
+  // Naver Map link for the shop — tapping the address / map button opens this.
+  naverMap: "https://naver.me/FmGvhrva",
 };
 
 // All social / contact links — used by the QR link hub and footer.

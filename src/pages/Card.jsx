@@ -59,7 +59,7 @@ export default function Card() {
             </div>
 
             <div className="bcard-tagline">{tagline}</div>
-            <div className="bcard-brands">Samsung · LG U+</div>
+            <div className="bcard-brands">Samsung · Apple · LG U+</div>
 
             <div className="bcard-contact">
               <div className="bcard-owner">{BUSINESS.owner}</div>
@@ -67,7 +67,9 @@ export default function Card() {
                 <span><Icon name="phone" size={11} /> {BUSINESS.phone}</span>
                 <span>Tel {BUSINESS.tel} · Fax {BUSINESS.fax}</span>
                 <span><Icon name="mail" size={11} /> {BUSINESS.email}</span>
-                <span><Icon name="pin" size={11} /> {address}</span>
+                <a className="bcard-addr" href={BUSINESS.naverMap} target="_blank" rel="noreferrer">
+                  <Icon name="pin" size={11} /> {address}
+                </a>
               </div>
             </div>
           </div>

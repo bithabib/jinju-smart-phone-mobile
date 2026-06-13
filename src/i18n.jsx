@@ -40,7 +40,8 @@ const STRINGS = {
   contact_kakao: { en: "KakaoTalk", ko: "카카오톡" },
   contact_address: { en: "Address", ko: "주소" },
   contact_bank: { en: "Bank Account", ko: "계좌번호" },
-  open_map: { en: "Open in Google Maps", ko: "구글 지도에서 열기" },
+  open_map: { en: "Open in Naver Map", ko: "네이버 지도에서 열기" },
+  view_directions: { en: "Tap to get directions", ko: "탭하여 길찾기" },
 
   // Social
   social_title: { en: "Follow & Contact Us", ko: "팔로우 및 문의" },

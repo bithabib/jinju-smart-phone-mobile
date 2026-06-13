@@ -159,11 +159,21 @@ main { flex: 1; }
   border-bottom: 1px solid var(--line); align-items: baseline;
 }
 .contact-list b { color: var(--blue); font-size: .9rem; }
-.contact-map { display: flex; flex-direction: column; gap: 10px; }
-.contact-map iframe {
-  width: 100%; min-height: 280px; border: 0; border-radius: var(--radius);
-  box-shadow: var(--shadow); flex: 1;
+.contact-map {
+  display: flex; align-items: center; gap: 18px; padding: 26px;
+  border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--line);
+  background: linear-gradient(135deg, var(--blue-l), #fff); color: var(--ink); transition: .2s;
+  min-height: 200px;
 }
+.contact-map:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+.map-pin {
+  width: 72px; height: 72px; flex: none; border-radius: 18px; display: grid; place-items: center;
+  background: var(--blue); color: #fff; box-shadow: var(--shadow);
+}
+.map-info { display: flex; flex-direction: column; gap: 6px; }
+.map-info b { font-size: 1.05rem; }
+.map-info > span:first-of-type { color: var(--muted); font-size: .9rem; }
+.map-btn { align-self: flex-start; margin-top: 6px; }
 
 /* ---------- Links hub ---------- */
 .links-page {
@@ -323,7 +333,8 @@ main { flex: 1; }
 }
 .bcard-owner { font-size: 3.2mm; font-weight: 800; margin-bottom: 1mm; }
 .bcard-lines { display: grid; gap: 0.5mm; }
-.bcard-lines span { display: flex; align-items: center; gap: 1.4mm; font-size: 2.5mm; opacity: .96; }
+.bcard-lines span,
+.bcard-lines .bcard-addr { display: flex; align-items: center; gap: 1.4mm; font-size: 2.5mm; opacity: .96; color: #fff; text-decoration: none; }
 .bcard-lines svg { opacity: .85; flex: none; }
 
 /* Back */
