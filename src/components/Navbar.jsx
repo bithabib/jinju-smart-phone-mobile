@@ -10,6 +10,7 @@ export default function Navbar() {
 
   const links = [
     { to: "/", key: "nav_home", end: true },
+    { to: "/gallery", key: "nav_gallery" },
     { to: "/links", key: "nav_links" },
     { to: "/card", key: "nav_card" },
     { to: "/sell", key: "nav_sell" },

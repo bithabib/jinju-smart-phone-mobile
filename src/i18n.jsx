@@ -9,6 +9,13 @@ const STRINGS = {
   nav_sell: { en: "Sell Sheet", ko: "판매장부" },
   nav_admin: { en: "Admin", ko: "관리자" },
   nav_card: { en: "Card", ko: "명함" },
+  nav_gallery: { en: "Gallery", ko: "갤러리" },
+
+  // Gallery
+  gallery_title: { en: "Our Shop", ko: "매장 둘러보기" },
+  gallery_subtitle: { en: "Take a look inside Jinju Smart Phone Mobile.", ko: "진주중고폰 매장을 둘러보세요." },
+  gallery_see_all: { en: "See all photos", ko: "사진 모두 보기" },
+  gallery_count: { en: "photos", ko: "장의 사진" },
 
   // Business card
   card_title: { en: "Business Card", ko: "명함" },

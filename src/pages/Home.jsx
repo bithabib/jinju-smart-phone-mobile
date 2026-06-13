@@ -4,10 +4,14 @@ import { useLang, pick } from "../i18n";
 import { BUSINESS, LINKS, resolveImg } from "../config";
 import { subscribeOffers } from "../firebase";
 import { Icon } from "../components/Icons";
+import { GALLERY } from "../gallery";
+import Lightbox from "../components/Lightbox";
 
 export default function Home() {
   const { t, lang } = useLang();
   const [offers, setOffers] = useState(null);
+  const [shot, setShot] = useState(null);
+  const preview = GALLERY.slice(0, 6);
 
   useEffect(() => subscribeOffers(setOffers), []);
 
@@ -82,6 +86,24 @@ export default function Home() {
         )}
       </section>
 
+      {/* SHOP GALLERY PREVIEW */}
+      <section className="section">
+        <div className="section-head">
+          <h2>{t("gallery_title")}</h2>
+          <p>{t("gallery_subtitle")}</p>
+        </div>
+        <div className="gallery-grid gallery-preview">
+          {preview.map((src, i) => (
+            <button className="gallery-item" key={src} onClick={() => setShot(i)}>
+              <img src={resolveImg(src)} alt={`Shop photo ${i + 1}`} loading="lazy" />
+            </button>
+          ))}
+        </div>
+        <div className="center" style={{ marginTop: 18 }}>
+          <Link to="/gallery" className="btn btn-primary">{t("gallery_see_all")} →</Link>
+        </div>
+      </section>
+
       {/* SOCIAL */}
       <section className="section section-alt">
         <div className="section-head">
@@ -137,6 +159,8 @@ export default function Home() {
           </a>
         </div>
       </section>
+
+      <Lightbox images={GALLERY} index={shot} onClose={() => setShot(null)} onChange={setShot} />
     </>
   );
 }

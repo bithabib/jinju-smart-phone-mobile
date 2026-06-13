@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Links from "./pages/Links";
 import QR from "./pages/QR";
 import Card from "./pages/Card";
+import Gallery from "./pages/Gallery";
 import Admin from "./pages/Admin";
 import Sell from "./pages/Sell";
 
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/links" element={<Links />} />
           <Route path="/qr" element={<QR />} />
           <Route path="/card" element={<Card />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="*" element={<Home />} />
