@@ -67,7 +67,6 @@ export default function Card() {
                 <span><Icon name="phone" size={11} /> {BUSINESS.phone}</span>
                 <span>Tel {BUSINESS.tel} · Fax {BUSINESS.fax}</span>
                 <span><Icon name="mail" size={11} /> {BUSINESS.email}</span>
-                <span><Icon name="kakao" size={11} /> {BUSINESS.kakao}</span>
                 <span><Icon name="pin" size={11} /> {address}</span>
               </div>
             </div>
