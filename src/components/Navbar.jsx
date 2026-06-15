@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { useLang } from "../i18n";
+import { useLang, LANGS } from "../i18n";
 import { BUSINESS } from "../config";
 
 export default function Navbar() {
-  const { t, lang, toggle } = useLang();
+  const { t, lang, setLang } = useLang();
   const [open, setOpen] = useState(false);
   const name = lang === "ko" ? BUSINESS.nameKo : BUSINESS.nameEn;
 
@@ -45,9 +45,16 @@ export default function Navbar() {
               {t(l.key)}
             </NavLink>
           ))}
-          <button className="lang-btn" onClick={toggle}>
-            {lang === "ko" ? "EN" : "한국어"}
-          </button>
+          <select
+            className="lang-btn"
+            value={lang}
+            onChange={(e) => { setLang(e.target.value); setOpen(false); }}
+            aria-label="Language"
+          >
+            {LANGS.map((l) => (
+              <option key={l.code} value={l.code}>{l.label}</option>
+            ))}
+          </select>
         </nav>
       </div>
     </header>
